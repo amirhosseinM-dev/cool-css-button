@@ -1,0 +1,68 @@
+.btn-text {
+  transform: skew(-20deg);
+}
+.btn {
+  font-family: "Orbitron", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 100px;
+  background-color: #6c5ce7;
+  color: white;
+  margin: 100px auto;
+  transform: skew(20deg);
+  position: relative;
+  transition: all 0.5s ease;
+}
+.btn::after {
+  content: "";
+  display: block;
+  height: 10px;
+  width: 100px;
+  background-color: inherit;
+  transform: skew(-20deg);
+  position: absolute;
+  bottom: -10px;
+  right: 2px;
+}
+.btn::before {
+  content: "";
+  display: block;
+  height: 50px;
+  width: 4px;
+  background-color: inherit;
+  transform: skewY(-70deg);
+  position: absolute;
+  left: -3px;
+  top: 5px;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: #341f97;
+  color: white;
+  transform: skew(20deg) scale(1.05);
+}
+
+@media (max-width: 500px) {
+  .btn {
+    width: 80px;
+    height: 40px;
+    font-size: 14px;
+  }
+  .btn::after {
+    height: 8px;
+    width: 80px;
+    position: absolute;
+    bottom: -8px;
+    right: 2px;
+  }
+  .btn::before {
+    height: 40px;
+    width: 4px;
+    position: absolute;
+    left: -3px;
+    top: 4px;
+  }
+}
